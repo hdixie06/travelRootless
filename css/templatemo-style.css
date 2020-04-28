@@ -26,7 +26,6 @@ p:last-child { margin-bottom: 0; }
 
 .tm-page-wrap { 
     max-width: 1400px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
     background: white;
 }
 
@@ -104,7 +103,6 @@ p:last-child { margin-bottom: 0; }
 }
 
 .navbar-toggler { 
-    border-color: rgb(104, 199, 187);
     border-radius: 0;
     cursor: pointer;
 }
