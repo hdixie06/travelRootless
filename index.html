@@ -26,6 +26,7 @@
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    
     <link rel="stylesheet" href="vendors/bootstrap-selector/css/bootstrap-select.min.css">
     <!--icon font css-->
     <link rel="stylesheet" href="vendors/themify-icon/themify-icons.css">
@@ -43,7 +44,32 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
 
     <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us4.list-manage.com","uuid":"5883fd57c5ab22b3608cd1f6f","lid":"834d40ceed","uniqueMethods":true}) })</script>
-
+    <script> $(document).ready(function() {
+        $("#myCarousel").on("slide.bs.carousel", function(e) {
+          var $e = $(e.relatedTarget);
+          var idx = $e.index();
+          var itemsPerSlide = 3;
+          var totalItems = $(".carousel-item").length;
+      
+          if (idx >= totalItems - (itemsPerSlide - 1)) {
+            var it = itemsPerSlide - (totalItems - idx);
+            for (var i = 0; i < it; i++) {
+              // append slides to end
+              if (e.direction == "left") {
+                $(".carousel-item")
+                  .eq(i)
+                  .appendTo(".carousel-inner");
+              } else {
+                $(".carousel-item")
+                  .eq(0)
+                  .appendTo($(this).find(".carousel-inner"));
+              }
+            }
+          }
+        });
+      });
+    </script>
+      
 </head>
 
 <body>
@@ -118,15 +144,14 @@
                             </span>
                         </span>
                     </button>
-
                     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                         <ul class="navbar-nav menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html">
+                                <a class="nav-link" href="#travelRootless">
                                     Home
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a title="About" class="nav-link" href="about.html">
                                     About
                                 </a>
@@ -135,21 +160,21 @@
                                 <a title="About Us" class="nav-link" href="contact.html">
                                     Contact Us
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
-                    </div>
+                    </div> 
                 </div>
             </nav>
         </header>
 
-        <section class="saas_home_area">
+        <section class="saas_home_area" id="travelRootless" >
             <div class="banner_top">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <h1 style="font-family: 'Baloo', cursive; color: white" class="highlight">Travel Rootless.</h1>
+                            <h1 style="font-family: 'Baloo', cursive; color: white; margin-bottom: 30px" class="highlight">Travel Rootless.</h1>
                             <h2 class="f_p f_size_40 l_height60 wow fadeInUp" data-wow-delay="0.3s">Simplify and enhance your <span class="f_700">travel experience</span> with the ultimate <span class="f_700">Travel</span> app!</h2>
-                            <p class="f_size_18 l_height30 wow fadeInUp" data-wow-delay="0.5s">Finally, a traveling app that allows users to <strong>stay organized</strong>, <strong>stay connected</strong>, and <strong>stay traveling!</strong> Rootless empowers people from all walks of life to travel and experience the beauty this world has to offer, and to do so with a peace of mind.</p>
+                            <p class="f_size_18 l_height30 wow fadeInUp" data-wow-delay="0.5s">Finally, a traveling app that allows users to <strong>stay organized</strong>, <strong>stay connected</strong>, and <strong>stay traveling!</strong></p>
                                 <form action="https://travelrootless.us4.list-manage.com/subscribe/post?u=5883fd57c5ab22b3608cd1f6f&amp;id=834d40ceed" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate data-wow-delay="0.6s" class="mailchimp wow fadeInUp">
                                  <div class="input-group subcribes">
                                     <input type="email" name="EMAIL" class="form-control memail" placeholder="E-Mail Address" required>
@@ -210,105 +235,147 @@
                 </svg>
             </div>
             <div class="s_service_section">
-                <div class="container custom_container">
-                    <h2 class="f_p f_size_30 l_height50 f_600 t_color text-center wow fadeInUp" data-wow-delay="0.3s">Rootless was built to grow a global, accessible, and sustainable travel community.</h2>
-                    <div class="row justify-content-md-center s_service_info mt_70">
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="s_service_item wow fadeInLeft" data-wow-delay="0.3s">
-                                <div class="solid_overlay"></div>
-                                <div class="icon icon_1">
-                                    <i class="ti-user"></i>
-                                </div>
-                                <h5 class="f_p f_size_20 f_600 t_color">Stay Connected</h5>
-                                <p class="l_height28">Ever went on a trip and wished there was a better way to connect and check-in along the way?</p>
-                                <!-- <a href="#firstColumn" class="learn_btn_two">Learn More <i class="ti-arrow-right"></i></a> -->
-                            </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 mx-auto tm-about-text-wrap text-center">                        
+                            <h1 style="font-family: 'Baloo', cursive; color: white; margin-bottom: 25px" class="highlight aboutHeader">About Rootless.</h1>  
                         </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="s_service_item wow fadeInLeft" data-wow-delay="0.5s">
-                                <div class="solid_overlay"></div>
-                                <div class="icon icon_2">
-                                    <i class="ti-bookmark-alt"></i>
-                                </div>
-                                <h5 class="f_p f_size_20 f_600 t_color">Stay Organized</h5>
-                                <p class="l_height28">Wouldn’t it be great if you could keep all the details of all your travels in one place?</p>
-                                <!-- <a href="#secondColumn" class="learn_btn_two">Learn More <i class="ti-arrow-right"></i></a> -->
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="s_service_item wow fadeInLeft" data-wow-delay="0.7s">
-                                <div class="solid_overlay"></div>
-                                <div class="icon icon_3">
-                                    <i class="ti-world"></i>
-                                </div>
-                                <h5 class="f_p f_size_20 f_600 t_color">Stay Traveling</h5>
-                                <p class="l_height28">Do you find yourself wishing there was an easier way to discover places to travel to next?</p>
-                                <!-- <a href="#thirdColumn" class="learn_btn_two">Learn More <i class="ti-arrow-right"></i></a> -->
-                            </div>
+                    </div>
+                </div> 
+                <div class="container">
+                    <div class="row">
+                        <div class="mx-auto tm-about-text-wrap text-center wow fadeInLeft">                        
+                           <h3 class="onlyH3" style="margin-bottom: 45px; margin-top: 25px;">Rootless was built to grow a global, accessible, and sustainable travel community.</h3>                             
                         </div>
                     </div>
                 </div>
-            </div>
-            <section class="agency_featured_area agency_featured_area_two bg_color">
-            <div class="container">
-                <h2 class="f_size_30 f_600 t_color3 l_height40 text-center wow fadeInUp" data-wow-delay="0.1s">Allow Rootless to help you unlock the <br>infinite possibilities of your next adventure!</h2>
-                <div class="features_info feature_info_two">
-                    <div class="container stayConnected" id="firstColumn">
-                    <div class="row agency_featured_item flex-row-reverse">
-                        <div class="col-lg-6">
-                            <div class="agency_featured_img text-right wow fadeInRight" data-wow-delay="0.2s">
-                                <img src="img/home4/2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="agency_featured_content pr_70 pl_70 wow fadeInLeft" data-wow-delay="0.4s">
-                                <h4 class="homeBoxes" style="color:white; font-family: 'Baloo', cursive;"><i class="ti-user icon"></i> &nbsp; &nbsp;A whole new meaning to staying connected</h3>
-                                <p style="color: black" class="homeParagraph">Remembering to send a text or posting to social isn’t always as easy as it sounds. Rootless was designed to bring your family and friends along with you on your travels, and provide a holistic view of your travel experience. Let Rootless help you share your adventures with those you love most, and give them the assurance that you are safe and having the time of your life. With Rootless you will be a part of the first virtual community that caters to all travelers.</p>
-                                <div class="hr"><hr /></div>
-                                <!-- <img style="opacity: 0.5" class="wavyPic" src="img/threeLines.png" alt=""> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container stayOrganized" id="secondColumn">
-                    <div class="row agency_featured_item agency_featured_item_two">
-                        <div class="col-lg-6">
-                            <div class="agency_featured_img text-right wow fadeInLeft" data-wow-delay="0.2s">
-                                <img src="img/home4/1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="agency_featured_content pr_70 pl_70 wow fadeInRight" data-wow-delay="0.4s">
-                                <h4 class="homeBoxes2" style="color: white; font-family: 'Baloo', cursive;"><i class="ti-bookmark-alt icon"></i> &nbsp;&nbsp; &nbsp;Keep every part of your journey in one place</h3>
-                                <p style="color: black">Staying organized can be the most dreadful part of planning your travels. Rootless takes the worry, stress and anxiety out of your travel planning. We are experts on keeping tabs on what is important to you. With Rootless, you’ll have easy access to an itinerary, never guessing what comes next. We’ll also provide the tips to get the most out of your trip along the way. Rootless wants you to remember everything you can. We’ll keep track of the moments and memories, so you can look back and share at any time.</p>
-                                <div class="hr"><hr /></div>
-                                <!-- <img style="opacity: 0.5" class="wavyPic" src="img/threeLines.png" alt=""> -->
-                            </div>
-                        </div>
-                        </div>
-                </div>
-                        <div class="container stayTraveling" id="thirdColumn">
-                        <div class="row agency_featured_item flex-row-reverse">
-                            <div class="col-lg-6">
-                                <div class="agency_featured_img text-right wow fadeInRight" data-wow-delay="0.2s">
-                                    <img src="img/home4/3.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="agency_featured_content pr_70 pl_70 wow fadeInLeft" data-wow-delay="0.4s">
-                                    <h4 class="homeBoxes" style="color: white; font-family: 'Baloo', cursive;"><i class="ti-world icon"></i> &nbsp;&nbsp;&nbsp;Be inspired to keep traveling and exploring</h3>
-                                    <p style="color: black">Traveling to a new place can be a daunting endeavor. A lot of research must take place prior to your trip.
-                                        Rootless wants to take the work out of it. We’ll help you understand the culture and geography of your
-                                        destination. Rootless helps you focus on the best part of your trip – having a great time. </p>
-                                        <div class="hr"><hr /></div>
-                                        <!-- <img style="opacity: 0.5" class="wavyPic" src="img/threeLines.png" alt=""> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
             </div>
         </section>
+
+        <div class="tm-container-outer" id="tm-section-2">
+            <section class="tm-slideshow-section">
+                <div class="tm-slideshow">
+                    <img style="opacity: 0.8;" src="img/hills.jpg" alt="Image">
+                </div>
+                <div class="tm-slideshow-description tm-bg-primary">
+                    <h2 style="font-family: 'Baloo', cursive; color: black">The Birth of Rootless</h2>
+                    <p style="color: black">Rootless is a passion project that was born out of a love for exploration and bewilderment of the world. While traveling and exploring there are so many unknowns. Rootless seeks to create a platform to optimize your travel experience and a true global travel community.</p>
+                </div>
+            </section>
+            <section class="clearfix tm-slideshow-section tm-slideshow-section-reverse">
+                <div class="tm-right tm-slideshow tm-slideshow-highlight">
+                    <img style="opacity: 0.8;" src="img/beach.jpg" alt="Image">
+                </div> 
+                <div class="tm-slideshow-description tm-slideshow-description-left tm-bg-highlight">
+                    <h2 style="font-family: 'Baloo', cursive; color: white">Our Values</h2>
+                    <p style="color: white">Rootless is passion, sustainability, community and adventure. We’ve built Rootless on these core values while fostering a fun atmosphere. We believe in being agents of change and hope to help others see the value in affordable and life changing travel. </p>
+                </div>                        
+            </section>
+            <section class="tm-slideshow-section">
+                <div class="tm-slideshow">
+                    <img style="opacity: 0.8;" src="img/bridge.jpg" alt="Image">
+                </div>
+                <div class="tm-slideshow-description tm-bg-primary">
+                    <h2 style="font-family: 'Baloo', cursive; color: black">Who Do We Serve</h2>
+                    <p style="color: black">Travel has long been viewed as a luxury. Our goal at Rootless is to make travel available to all. We are breaking down barriers that have long been built up by society and using education as our tool. Rootless will teach you how truly accessible your next adventure is.
+                    </p>
+                </div>
+            </section>
+        </div>
+        <section>
+            <div class="tm-page-wrap mx-auto">
+                
+                    <div style="margin-top: 55px" class="container">
+                        <div class="row">
+                            <div class="col-lg-12 mx-auto tm-about-text-wrap text-center wow fadeInUp" data-wow-delay="0.4s">                        
+                                <h1 style="font-family: 'Baloo', cursive; color: white; margin-bottom: 25px" class="highlight aboutHeader">So, why Rootless?</h1>  
+                            </div>
+                        </div>
+                    </div>            
+               
+                    <div style="margin-bottom: 45px;" class="container-fluid">
+                        <div id="myCarousel" class="carousel slide" data-interval="false">
+                          <div class="carousel-inner row w-100 mx-auto">
+                            <div class="carousel-item col-md-4 active">
+                              <div style="border: none" class="card">
+                                <img class="card-img-top img-fluid" src="img/home4/2.png" alt="Card image cap">
+                                <div style="box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);" class="card-body carouselCardBody2">
+                                     <h4 class="card-title text-center" style="font-family: 'Baloo', cursive; color: white; background-color:rgba(0,0,0, 0.6);">Stay Connected.</h4>
+                                  <p class="card-text" style="color: black">Remembering to send a text or posting to social isn’t always as easy as it sounds. Rootless was designed to ease this pressure by bringing your family and friends with you on your journey. Let Rootless help you share your adventures, giving the assurance you are safe, and having a great time.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="carousel-item col-md-4">
+                              <div style="border: none" class="card">
+                                <img class="card-img-top img-fluid" src="img/home4/1.png" alt="Card image cap">
+                                <div style="box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);" class="card-body carouselCardBody">
+                                  <h4 class="card-title text-center" style="font-family: 'Baloo', cursive; color: white; background-color:rgba(0,0,0, 0.6);">Stay Organized.</h4>
+                                  <p class="card-text" style="color: black">Staying organized can be the most dreadful part of planning your travels. With Rootless, you’ll have a personalized itinerary with what is most important to you. Rootless also keeps track of the excitement along the way, so you can always look back and reminisce.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="carousel-item col-md-4">
+                              <div style="border: none" class="card">
+                                <img class="card-img-top img-fluid" src="img/home4/3.png"  alt="Card image cap">
+                                <div style="box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);"  class="card-body carouselCardBody2">
+                                    <h4 class="card-title text-center" style="font-family: 'Baloo', cursive; color: white; background-color:rgba(0,0,0, 0.6);">Stay Traveling.</h4>
+                                  <p class="card-text" style="color: black">Traveling to a new place can be a daunting endeavor with all the research it can require. Rootless wants to take the work out of it, and allow you to know what to expect when you arrive. Rootless helps you focus on the best part of your trip – exploring your destination.</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div>
+                      </div>
+                </div>        
+        </section>
+        <div class="container">
+            <div class="row">
+                <div style="margin-top: 50px;" class="col-lg-12 mx-auto tm-about-text-wrap text-center">                        
+                    <h1 style="font-family: 'Baloo', cursive; color: white; margin-bottom: 25px" class="highlight aboutHeader">Meet the Team.</h1>  
+                </div>
+            </div>
+        </div> 
+        <section class="p-5 tm-container-outer tm-bg-gray">            
+            <div style="display: flex; justify-content: space-around;"class="row">
+                <div class="column item">
+                  <div class="aboutUsCards card" style="border-style: solid; border-width: 8px; border-color:rgba(230, 198, 68, 0.90);">
+                    <img src="img/Hannah .jpg" alt="Hannah" style="width:100%; width: 150px; height: 150px; margin: 20px auto; border-radius: 50%;">
+                    <div style="margin-bottom: 20px; text-align: center;" class="container">
+                      <h2 style="color: rgb(56, 55, 55); font-family: 'Baloo', cursive;">Hannah Dixie</h2>
+                      <p class="title">Co-Founder</p>
+                      <p><strong>Fun Fact</strong>: Hannah has been playing the ukulele for 7 years.</p>
+                      <p>hannah@travelrootless.com</p>
+                      <div class="overlay">
+                        <p>Hannah graduated from the University of Cincinnati in 2015 with a degree in Biology. It was at UC in 2013 when she caught the travel bug after going on her first international trip to Africa. Since then she's traveled to 16 countries, lived abroad in New Zealand and went solo backpacking across Southeast Asia. With a career in software development, Hannah is able to combine her passion for traveling along with her love for technology to bring you an app that will truly change the way you travel.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column item">
+                  <div class="aboutUsCards card" style="border-style: solid; border-width: 8px; border-color:rgba(230, 198, 68, 0.90);">
+                    <img src="img/isaac3.jpg" alt="Isaac" style="width:100%; width: 150px; height: 150px; margin: 20px auto; border-radius: 50%;">
+                    <div style="margin-bottom: 20px; text-align: center;" class="container">
+                      <h2 style="color: rgb(56, 55, 55); font-family: 'Baloo', cursive;">Isaac Stamper</h2>
+                      <p class="title">Co-Founder</p>
+                      <p><strong>Fun Fact</strong>: Isaac can hold a handstand for 30 seconds.</p>
+                      <p>isaac@travelrootless.com</p>
+                      <div class="overlay">
+                        <p>Isaac developed a passion for traveling when he took a trip to Nicaragua in 2015 and has since been to 15 other countries. He graduated from the University of Cincinnati in Biomedical Engineering in 2019, but has always had a passion for applying technology to tackle any business need. Isaac is excited to use his experiences in user centric design and medical devices to revolutionize the way we all travel. Isaac is ready to take on this next adventure and bring Rootless to you!</p>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="contactSauce"> If Rootless is something that gets you excited and you would like to learn more or join the team, please feel free to<span><a href="mailto:info@travelrootless.com"><u>contact</u></a></span>us!<p>
+                    <p style="margin: 15px auto;"><a href="mailto:info@travelrootless.com"><i style="font-size: 30px; color: #3e7348" class="ti-email"></i></a></p>
+                </div>                         
         </section>
         <section class="s_subscribe_area">
             <div class="s_shap">
@@ -348,9 +415,6 @@
                    <p class="mchimp-sucmessage" style="display: none;"></p>
                </form>
             </div>
-            <div id="learnMore" class="text-center">
-                <p style=" padding-top: 30px"><a href="about.html"  style="color: #3e7348;" class="fadeInUp wow"><u>Learn More About Us!</u></a></p>
-                </div>
         </section>
         <footer class="footer_area f_bg">
             <div class="footer_bottom">

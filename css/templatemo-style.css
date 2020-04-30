@@ -12,7 +12,7 @@ body {
 	font-family: "Poppins", sans-serif;
 	font-size: 13px;
 	font-weight: 300;
-    background: #e6e6e6;
+    background: #ffffff;
 }
 
 a, button { transition: all 0.3s ease; }
@@ -251,7 +251,11 @@ label { font-weight: 700; }
 
 .tm-slideshow-description-left {
     margin-left: auto;
-    margin-right: -42px;    
+    margin-right: -42px;
+}
+.tm-slideshow-description-left2 {
+    margin-left: auto;
+    margin-right: -42px;
 }
 
 .tm-position-relative { position: relative; }

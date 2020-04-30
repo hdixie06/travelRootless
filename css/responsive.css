@@ -1823,9 +1823,9 @@
         padding-left: 20px;
         padding-right: 20px;
     }
-    .menu_one,.header_area.navbar_fixed .menu_one,.menu_two,.menu_six,.menu_seven{
+    /* .menu_one,.header_area.navbar_fixed .menu_one,.menu_two,.menu_six,.menu_seven{
         padding: 15px 0px;
-    }
+    } */
     .w_menu .nav-item .nav-link{
         color: #051441;
     }
@@ -2880,9 +2880,6 @@
         padding-left: 20px;
         padding-right: 20px;
     }
-    .app_featured_area,.agency_featured_area_two{
-        padding-bottom: 80px;
-    }
     .app_service_area{
         padding-top: 80px;
     }
@@ -2973,7 +2970,7 @@
         margin-bottom: 15px;
     }
     .s_service_section {
-        margin-top: 120px;
+        margin-top: 60px;
     }
     .mobile_img .women_img {
         top: 50px;

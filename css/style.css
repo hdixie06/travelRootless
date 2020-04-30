@@ -419,6 +419,196 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 
 /*====================================================*/
 /*========== ABOUT US PAGE =========*/
+@media (min-width: 768px) {
+  /* show 3 items */
+  .carousel-inner .active,
+  .carousel-inner .active + .carousel-item,
+  .carousel-inner .active + .carousel-item + .carousel-item {
+    display: block;
+  }
+
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+    transition: none;
+  }
+
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    position: absolute;
+    top: 0;
+    right: -33.3333%;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* left or forward direction */
+  .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+  .carousel-item-next.carousel-item-left + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  /* farthest right hidden item must be abso position for animations */
+  .carousel-inner .carousel-item-prev.carousel-item-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* right or prev direction */
+  .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+  .carousel-item-prev.carousel-item-right + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible;
+  }
+}
+
+.carouselCardBody {
+  background: rgba(75, 114, 76);
+  opacity: 0.8;
+}
+
+.carouselCardBody2 {
+  background: rgba(75, 114, 76);
+  opacity: 0.8;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  .carousel-control-prev, .carousel-control-next {
+  visibility: visible;
+  }
+}
+
+.tm-page-wrap { 
+  max-width: 1400px;
+  background: white;
+}
+.tm-container-outer {
+  max-width: 1400px;
+  margin: 0 auto;    
+}
+.tm-about-text-wrap { max-width: 830px; }
+
+.tm-container-outer {
+  max-width: 1400px;
+  margin: 0 auto;    
+}
+.tm-slideshow-section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.tm-slideshow { width: 50%; }
+.tm-slideshow2 { width: 33.5%;   z-index: 2;}
+
+.tm-slideshow-description {
+  padding: 50px;
+  color: white;
+  width: 48%;
+  z-index: 2;
+  margin-left: -42px;
+  -webkit-box-shadow: 0px 20px 24px 0px rgba(0, 11, 40, 0.1);
+  box-shadow: 0px 20px 24px 0px rgba(0, 11, 40, 0.1);
+}
+.tm-slideshow-description2 {
+  padding: 30px;
+  color: white;
+  width: 40%;
+  /* z-index: 2; */
+  margin-left: -102px;
+  -webkit-box-shadow: 0px 20px 24px 0px rgba(0, 11, 40, 0.1);
+  box-shadow: 0px 20px 24px 0px rgba(0, 11, 40, 0.1);
+
+}
+.tm-slideshow-description-left {
+  margin-left: auto;
+  margin-right: -42px;    
+  -webkit-box-shadow: 0px 20px 24px 0px rgba(0, 11, 40, 0.1);
+  box-shadow: 0px 20px 24px 0px rgba(0, 11, 40, 0.1);
+
+}
+.tm-slideshow-description-left2 {
+  margin-left: auto;
+  margin-right: -42px;    
+}
+
+.tm-bg-primary { background: rgba(230, 198, 68, 0.90); }
+.tm-bg-highlight { background: rgba(75, 114, 76, 0.90) }
+.tm-bg-connected {  background: rgba(207, 224, 119, 0.5);}
+.tm-bg-organized { background: rgba(101, 127, 97, 0.9);}
+.tm-slideshow-section-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+@media screen and (max-width: 986px) {
+  .tm-slideshow-section { flex-direction: column; }
+  
+  .tm-slideshow,.tm-slideshow2, 
+  .tm-slideshow-description, .tm-slideshow-description2 {
+      width: 100%;
+      max-width: 700px;
+  }
+
+  .tm-slideshow2 {
+    margin-left: -65px;
+  }
+
+  .tm-slideshow-description, .tm-slideshow-description2 {        
+      margin-right: auto;
+      margin-left: auto;
+  }
+
+  .slick-prev, .slick-next {
+      bottom: 0;
+      top: auto;
+  }
+
+  .tm-contact-form {
+      position: static;
+      width: 100%;
+  }
+
+  .tm-name-container,
+  .tm-email-container {
+      width: 49%;
+  }
+
+  .tm-email-container {
+      margin-left: 0;
+      float: right;
+  }
+
+}
 .item{
   position: relative;
 }
@@ -457,19 +647,19 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   padding: 25px;
   }
 }
+@media screen and (max-width: 767px) {
+  .onlyH3 {
+ font-size: 1.2rem;
+ margin-left: 12px;
+ margin-right: 12px;
+  }
+}
 
 .contactSauce{
   text-align: center;
   font-size: 25px;
   line-height: 1.5;
-  margin: 60px;
-}
-div.hr {
-  border: 0;
-  width: 100%;
-  color: rgba( 75, 114, 76);
-  background-color:rgba( 75, 114, 76, 0.3);
-  height: 20px;
+  margin-top: 60px;
 }
 
 @media screen and (max-width: 767px) {
@@ -478,6 +668,14 @@ div.hr {
   font-size: 18px;
   }
 }
+
+/* @media screen and (max-width: 767px) {
+  .card-img-top {
+    border: 1px solid rgba(101, 127, 9);
+    -webkit-box-shadow: 0px 20px 60px 0px rgba(0, 11, 40, 0.06);
+    box-shadow: 0px 20px 60px 0px rgba(0, 11, 40, 0.06);
+  }
+} */
 
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
@@ -534,6 +732,7 @@ input[type=submit]:hover {
 .aboutUsCards {
   -webkit-box-shadow: 0px 20px 60px 0px rgba(0, 11, 40, 0.06);
   box-shadow: 0px 20px 60px 0px rgba(0, 11, 40, 0.06);
+  margin-top: 35px;
 }
 .button { 
   background-color: white;
@@ -2611,6 +2810,7 @@ height: auto
   left: 0;
   width: 100%;
   background-color: #e8bf1a;
+  max-height: 95px;
   -webkit-box-shadow: 0px 4px 6px 0px rgba(12, 0, 46, 0.06);
   box-shadow: 0px 4px 6px 0px rgba(12, 0, 46, 0.06);
 }
@@ -5872,12 +6072,9 @@ height: auto
 
 /*============== agency_featured_area css =============*/
 .agency_featured_area {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
-.agency_featured_area_two {
-  padding-bottom: 150px;
-}
 
 .features_info {
   position: relative;
